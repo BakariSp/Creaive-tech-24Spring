@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from './assets/vite.svg';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useLocation
+} from "react-router-dom";
+// import { Router } from 'react-router-dom/cjs/react-router-dom';
+import './App.css';
+import AboutPage from './pages/about';
+import HomePage from './pages/homepage';
+import SketchfabViewer from './pages/project1';
+import Navbar from './components/navigater';
+// import Layout from './pages/layout';
 
-function App() {
-  const [count, setCount] = useState(0)
+function Layout() {
+  const location = useLocation();
 
   return (
     <>
+      {location.pathname !== "/" && <Navbar />}
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/project1">
+            <SketchfabViewer />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
+  
 }
 
-export default App
+export default function App() {
+  return (
+    <Router basename='/Creaive-tech-24Spring'>
+      <Layout />
+    </Router>
+  );
+}
+
+function Home() {
+  return <HomePage />;
+}
+
+function About() {
+  return <AboutPage />;
+}
+
+
+
+

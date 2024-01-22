@@ -1,0 +1,33 @@
+/* Navbar.css */
+.navbar {
+  background-color: #333; /* Dark background */
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Distribute nav items evenly */
+  align-items: center; /* Center items vertically */
+  padding: 0.5rem 0; /* Some padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000; /* Ensure it's above other items */
+}
+
+.navbar a {
+  color: #f2f2f2; /* Light text color */
+  text-decoration: none; /* No underline */
+  padding: 0.5rem 1rem; /* Spacing around text */
+  border-radius: 4px; /* Rounded corners for highlight */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: #555; /* Darker background on hover/active */
+}
+
+/* Responsive design: Adjust navbar for small screens */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+}

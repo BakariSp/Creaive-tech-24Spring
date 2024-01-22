@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body {
+  background-color: #5e5e5e;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -28,13 +32,30 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  /* a:nth-of-type(1) .logo {
+    animation: logo-spin infinite 20s linear;
+  } */
+
+  .card:hover .logo {
     animation: logo-spin infinite 20s linear;
   }
+
 }
 
 .card {
-  padding: 2em;
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+  text-decoration: none; /* This will remove the underline from the text */
+  color: inherit; /* This will keep the text color the same as it is elsewhere */
+  border-radius: 2%;
+}
+
+.card:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
 }
 
 .read-the-docs {
