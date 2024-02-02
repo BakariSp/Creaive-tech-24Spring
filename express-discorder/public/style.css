@@ -1,0 +1,11 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Removes scrollbar for full canvas display */
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: block; /* Removes scrollbar */
+}

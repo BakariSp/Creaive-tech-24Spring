@@ -15,6 +15,7 @@ import AboutPage from './pages/about';
 import HomePage from './pages/homepage';
 import SketchfabViewer from './pages/project1';
 import Navbar from './components/navigater';
+import PostToGithub from './pages/postToGithub';
 // import Layout from './pages/layout';
 
 function Layout() {
@@ -33,7 +34,10 @@ function Layout() {
           <Route path="/project1">
             <SketchfabViewer />
           </Route>
-          <Route path="/">
+          <Route path="/github">
+            <GitHub />
+          </Route>
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
@@ -45,7 +49,7 @@ function Layout() {
 
 export default function App() {
   return (
-    <Router basename='/Creaive-tech-24Spring'>
+    <Router >
       <Layout />
     </Router>
   );
@@ -57,6 +61,10 @@ function Home() {
 
 function About() {
   return <AboutPage />;
+}
+
+function GitHub() {
+  return <PostToGithub />;
 }
 
 
