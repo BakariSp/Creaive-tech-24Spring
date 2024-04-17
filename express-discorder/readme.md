@@ -36,7 +36,7 @@ app.post("/github", (req, res) => {
 `
 
 **Fecth and Draw Images**
-`
+```javascript
   // Function to fetch image URLs from the server
       function fetchImages() {
           fetch('/images')
@@ -134,6 +134,6 @@ app.post("/github", (req, res) => {
       
           requestAnimationFrame(draw); // Keep animating
       }
-`
+```
 
 ![image](https://github.com/BakariSp/Creaive-tech-24Spring/assets/46394756/f907c9be-6a32-451d-ae90-8a1288f87234)
