@@ -3,9 +3,9 @@
 
 ### Server
 
-** Send Avatar to Discord Channel with POST**
-`
-  app.post("/github", (req, res) => {
+**Send Avatar to Discord Channel with POST**
+```javascript
+app.post("/github", (req, res) => {
     const content = ":wave: Hi " + req.body.sender.login;
     const avatarUrl = req.body.sender.avatar_url;
     const login = req.body.sender.login; // Capture the login
@@ -26,16 +26,16 @@
       res.status(500).send("An error occurred");
     });
   });
-`
+```
 
-** GET handler to display stored image**
+**GET handler to display stored image**
 `
   app.get('/github', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
   });
 `
 
-** Fecth and Draw Images**
+**Fecth and Draw Images**
 `
   // Function to fetch image URLs from the server
       function fetchImages() {
